@@ -1,28 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="%app.theme%">
-
-<head>
-	<meta charset="utf-8" />
-	<title>lib_wallet</title>
-	<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-	<meta name="viewport" content="width=device-width" />
-	<meta name="description" content="An offline first libre money wallet.">
-	<link rel="manifest" crossorigin="use-credentials" href="%sveltekit.assets%/manifest.json" />
-	<!-- Chrome, Firefox and Opera -->
-	<meta name="theme-color" content="#4285f4">
-	<!-- Windows Phone -->
-	<meta name="msapplication-navbutton-color" content="#4285f4">
-	<!-- iOS Safari -->
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<!-- <meta name="apple-mobile-web-app-status-bar-style" content="#4285f4"> -->
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-	<link rel="apple-touch-icon" href="%sveltekit.assets%/maskable_icon_x170.png">
-
-	%sveltekit.head%
-</head>
-
-<body data-sveltekit-preload-data="hover">
-	<div style="display: contents">%sveltekit.body%</div>
-</body>
-
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
 </html>
