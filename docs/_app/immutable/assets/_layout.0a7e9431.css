@@ -9,7 +9,7 @@ body {
 }
 
 [data-theme="dark"] {
-	--th-cl: rgb(84, 78, 84);
+	--th-cl: rgb(245, 209, 158);
 }
 
 .app {
