@@ -1,6 +1,7 @@
 {
   "short_name": "lib-wallet",
   "name": "offline first libre wallet",
+  "scope": "/lib_wallet/",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#3367D6",
