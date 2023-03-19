@@ -1,1 +1,0 @@
-const e=(t,s)=>{var r;return((r=s==null?void 0:s.match("(^|;)\\s*"+t+"\\s*=\\s*([^;]+)"))==null?void 0:r.pop())||null},a=()=>navigator.serviceWorker.getRegistrations().then(t=>t.forEach(s=>s.unregister()));export{e as g,a as u};
