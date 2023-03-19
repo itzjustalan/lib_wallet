@@ -20,6 +20,9 @@ const config = {
 		paths: {
 			base: dev ? '' : '/lib_wallet',
 		},
+		serviceWorker: {
+			register: false,
+		},
 	}
 };
 

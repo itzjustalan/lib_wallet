@@ -20,16 +20,17 @@
 
 	<meta http-equiv="content-security-policy" content="">
 		<link href="./lib_wallet/_app/immutable/assets/_layout.a2081535.css" rel="stylesheet">
-		<link rel="modulepreload" href="./lib_wallet/_app/immutable/entry/start.c2de5155.js">
+		<link rel="modulepreload" href="./lib_wallet/_app/immutable/entry/start.9d78e28d.js">
 		<link rel="modulepreload" href="./lib_wallet/_app/immutable/chunks/index.48466a63.js">
-		<link rel="modulepreload" href="./lib_wallet/_app/immutable/chunks/singletons.c058017f.js">
+		<link rel="modulepreload" href="./lib_wallet/_app/immutable/chunks/singletons.4653e273.js">
 		<link rel="modulepreload" href="./lib_wallet/_app/immutable/chunks/index.2d225a5a.js">
-		<link rel="modulepreload" href="./lib_wallet/_app/immutable/chunks/paths.91fdf31f.js">
-		<link rel="modulepreload" href="./lib_wallet/_app/immutable/entry/app.747480e4.js">
-		<link rel="modulepreload" href="./lib_wallet/_app/immutable/entry/_layout.svelte.90c08921.js">
+		<link rel="modulepreload" href="./lib_wallet/_app/immutable/chunks/paths.f35a532c.js">
+		<link rel="modulepreload" href="./lib_wallet/_app/immutable/entry/app.88977b53.js">
+		<link rel="modulepreload" href="./lib_wallet/_app/immutable/entry/_layout.svelte.cbeb1c46.js">
+		<link rel="modulepreload" href="./lib_wallet/_app/immutable/chunks/utils.535257d2.js">
 		<link rel="modulepreload" href="./lib_wallet/_app/immutable/entry/_layout.ts.984db11e.js">
 		<link rel="modulepreload" href="./lib_wallet/_app/immutable/chunks/_layout.da46b06b.js">
-		<link rel="modulepreload" href="./lib_wallet/_app/immutable/entry/_page.svelte.ed9016d7.js"><title>Home</title><!-- HEAD_svelte-1v0gh95_START --><meta name="description" content="An offline first libre money wallet."><!-- HEAD_svelte-1v0gh95_END -->
+		<link rel="modulepreload" href="./lib_wallet/_app/immutable/entry/_page.svelte.53601cae.js"><title>Home</title><!-- HEAD_svelte-1v0gh95_START --><meta name="description" content="An offline first libre money wallet."><!-- HEAD_svelte-1v0gh95_END -->
 </head>
 
 <body data-sveltekit-preload-data="hover">
@@ -48,7 +49,7 @@
 			
 			<script>
 				{
-					__sveltekit_7pzfr3 = {
+					__sveltekit_dalnkh = {
 						env: {},
 						assets: "/lib_wallet",
 						base: new URL("./lib_wallet", location).pathname,
@@ -58,22 +59,16 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("./lib_wallet/_app/immutable/entry/start.c2de5155.js"),
-						import("./lib_wallet/_app/immutable/entry/app.747480e4.js")
+						import("./lib_wallet/_app/immutable/entry/start.9d78e28d.js"),
+						import("./lib_wallet/_app/immutable/entry/app.88977b53.js")
 					]).then(([kit, app]) => {
-						kit.start(app, __sveltekit_7pzfr3.element, {
+						kit.start(app, __sveltekit_dalnkh.element, {
 							node_ids: [0, 2],
 							data,
 							form: null,
 							error: null
 						});
 					});
-
-					if ('serviceWorker' in navigator) {
-						addEventListener('load', function () {
-							navigator.serviceWorker.register('./lib_wallet/service-worker.js');
-						});
-					}
 				}
 			</script>
 		</div>

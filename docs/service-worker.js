@@ -1,63 +1,64 @@
-const a = /* @__PURE__ */ location.pathname.split("/").slice(0, -1).join("/"), m = [
-  a + "/_app/immutable/entry/app.747480e4.js",
-  a + "/_app/immutable/chunks/0.34be0ae1.js",
-  a + "/_app/immutable/chunks/1.b0c711c2.js",
-  a + "/_app/immutable/chunks/2.690079a6.js",
-  a + "/_app/immutable/chunks/3.426e164b.js",
-  a + "/_app/immutable/chunks/_layout.da46b06b.js",
-  a + "/_app/immutable/chunks/index.2d225a5a.js",
-  a + "/_app/immutable/chunks/index.48466a63.js",
-  a + "/_app/immutable/chunks/paths.91fdf31f.js",
-  a + "/_app/immutable/chunks/singletons.c058017f.js",
-  a + "/_app/immutable/entry/start.c2de5155.js",
-  a + "/_app/immutable/entry/error.svelte.c4d60af9.js",
-  a + "/_app/immutable/assets/_layout.a2081535.css",
-  a + "/_app/immutable/entry/_layout.svelte.90c08921.js",
-  a + "/_app/immutable/entry/_layout.ts.984db11e.js",
-  a + "/_app/immutable/entry/_page.svelte.ed9016d7.js",
-  a + "/_app/immutable/entry/test-page.svelte.00aabc8d.js"
+const e = /* @__PURE__ */ location.pathname.split("/").slice(0, -1).join("/"), m = [
+  e + "/_app/immutable/entry/app.88977b53.js",
+  e + "/_app/immutable/chunks/0.43c97697.js",
+  e + "/_app/immutable/chunks/1.b2e2facd.js",
+  e + "/_app/immutable/chunks/2.5d44c2e6.js",
+  e + "/_app/immutable/chunks/3.9f3f8523.js",
+  e + "/_app/immutable/chunks/_layout.da46b06b.js",
+  e + "/_app/immutable/chunks/index.2d225a5a.js",
+  e + "/_app/immutable/chunks/index.48466a63.js",
+  e + "/_app/immutable/chunks/paths.f35a532c.js",
+  e + "/_app/immutable/chunks/singletons.4653e273.js",
+  e + "/_app/immutable/chunks/utils.535257d2.js",
+  e + "/_app/immutable/entry/start.9d78e28d.js",
+  e + "/_app/immutable/entry/error.svelte.47954c8b.js",
+  e + "/_app/immutable/assets/_layout.a2081535.css",
+  e + "/_app/immutable/entry/_layout.svelte.cbeb1c46.js",
+  e + "/_app/immutable/entry/_layout.ts.984db11e.js",
+  e + "/_app/immutable/entry/_page.svelte.53601cae.js",
+  e + "/_app/immutable/entry/test-page.svelte.e93c7c5e.js"
 ], o = [
-  a + "/favicon.png",
-  a + "/manifest.json",
-  a + "/maskable_icon.png",
-  a + "/maskable_icon_x128.png",
-  a + "/maskable_icon_x170.png",
-  a + "/maskable_icon_x48.png",
-  a + "/maskable_icon_x72.png",
-  a + "/maskable_icon_x96.png"
-], r = "1679214731375", c = self, i = `cache-${r}`, u = [
+  e + "/favicon.png",
+  e + "/manifest.json",
+  e + "/maskable_icon.png",
+  e + "/maskable_icon_x128.png",
+  e + "/maskable_icon_x170.png",
+  e + "/maskable_icon_x48.png",
+  e + "/maskable_icon_x72.png",
+  e + "/maskable_icon_x96.png"
+], r = "1679216036184", c = self, i = `cache-${r}`, u = [
   ...m,
   // the app itself
   ...o
   // everything in `static`
 ];
-c.addEventListener("install", (e) => {
+c.addEventListener("install", (a) => {
   async function t() {
     await (await caches.open(i)).addAll(u);
   }
-  e.waitUntil(t());
+  a.waitUntil(t());
 });
-c.addEventListener("activate", (e) => {
+c.addEventListener("activate", (a) => {
   async function t() {
     for (const n of await caches.keys())
       n !== i && await caches.delete(n);
   }
-  e.waitUntil(t());
+  a.waitUntil(t());
 });
-c.addEventListener("fetch", (e) => {
-  if (e.request.method !== "GET")
+c.addEventListener("fetch", (a) => {
+  if (a.request.method !== "GET")
     return;
   async function t() {
-    const n = new URL(e.request.url), p = await caches.open(i);
-    var l = p.match(e.request).then((s) => s === void 0 ? new Response() : s);
+    const n = new URL(a.request.url), p = await caches.open(i);
+    var l = p.match(a.request).then((s) => s === void 0 ? new Response() : s);
     if (u.includes(n.pathname))
       return l;
     try {
-      const s = await fetch(e.request);
-      return s.status === 200 && p.put(e.request, s.clone()), s;
+      const s = await fetch(a.request);
+      return s.status === 200 && p.put(a.request, s.clone()), s;
     } catch {
       return l;
     }
   }
-  e.respondWith(t());
+  a.respondWith(t());
 });
