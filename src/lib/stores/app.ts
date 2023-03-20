@@ -1,27 +1,22 @@
 import type { Account } from '$lib/models/account';
 import { writable } from 'svelte/store';
 
+export type pagenames = "home" | "dash" | "test" | "debug" | "accounts" | "new-account";
+
 export interface App {
-    account?: Account;
+  page: pagenames;
+  account?: Account;
 }
 
 function createStore() {
-  const { subscribe, set, update } = writable<App>({});
+  const { subscribe, set, update } = writable<App>({
+    page: 'home',
+  });
 
   return {
     subscribe,
-    setAccount: (account: Account) => update(v => {
-        v.account = account;
-        return v;
-    }),
-    // set: (theme: Theme) => {
-    //   updateDocumentTheme(theme);
-    //   set(theme);
-    // },
-    // toggle: () =>
-    //   update((v) =>
-    //     updateDocumentTheme(v === Theme.Dark ? Theme.Light : Theme.Dark)
-    //   ),
+    navto: (page: pagenames) => update(v => ({ ...v, page })),
+    setAccount: (account: Account) => update(v => ({ ...v, account })),
   };
 }
 

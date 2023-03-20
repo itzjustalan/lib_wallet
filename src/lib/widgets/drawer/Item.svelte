@@ -12,12 +12,12 @@
     .item {
         margin: 1vw;
         padding: 1vw;
-        background-color: rgb(196, 196, 196);
+        background-color: var(--item-bg);
         border-radius: 1vw;
         transition: 900ms;
         /* border-top: 1px solid var(--ln-cl); */
     }
     .item:hover {
-        background-color: grey;
+        background-color: var(--item-bg-hv);
     }
 </style>

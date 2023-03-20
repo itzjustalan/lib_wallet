@@ -12,6 +12,8 @@
 	--bg-cl: var(--dk-bg-cl);
 	--ln-cl: var(--dk-ln-cl);
 	--link-visited: var(--dk-link-visited);
+	--item-bg: var(--dk-item-bg);
+	--item-bg-hv: var(--dk-item-bg-hv);
 }
 
 a, a:visited {

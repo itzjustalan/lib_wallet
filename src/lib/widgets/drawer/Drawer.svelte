@@ -1,25 +1,27 @@
-<script>
+<script lang="ts">
     import { dev } from "$app/environment";
-import { base } from "$app/paths";
+    import { base } from "$app/paths";
     import { app } from "$lib/stores/app";
+    import type { pagenames } from "$lib/stores/app";
     import { theme } from "$lib/stores/theme";
     import Item from "./Item.svelte";
-</script>
 
+    const navto = (page: pagenames) => () => app.navto(page);
+</script>
 
 <aside>
     <nav class="drawer">
-        <div class="heading">Drawer</div>
+        <div class="heading">Drawer {$app.account?.name}</div>
         <!-- <h1 class="heading">Drawer</h1> -->
-        <Item text={'theme: ' + $theme} onclick={theme.toggle} />
-        <Item text="Home" onclick={() => window.location.replace(base + '/')} />
-        <Item text="Test" onclick={() => window.location.replace(base + '/test')} />
-        <Item text="Dashboard" onclick={() => window.location.replace(base + '/dash')} />
-        <Item text={'Account: ' + $app.account?.name} onclick={() => window.location.replace(base + '/accounts')} />
-        <Item text={'New Account'} onclick={() => window.location.replace(base + '/accounts/new')} />
-            {#if dev}
-                <Item text={'developer'} onclick={() => window.location.replace(base + '/debug')} />
-            {/if}
+        <Item text={"theme: " + $theme} onclick={theme.toggle} />
+        <Item text="Home" onclick={navto("home")} />
+        <Item text="Test" onclick={navto("test")} />
+        <Item text="Dashboard" onclick={navto("dash")} />
+        <Item text={"Accounts"} onclick={navto("accounts")} />
+        <Item text={"New Account"} onclick={navto("new-account")} />
+        {#if dev}
+            <Item text={"developer"} onclick={navto("debug")} />
+        {/if}
         <!-- <Item text="" onclick={() => {}} /> -->
     </nav>
 </aside>

@@ -1,24 +1,23 @@
 <script lang="ts">
-  import { base } from "$app/paths";
-    import { accountService } from "$lib/services/account.service";
-    import { onMount } from "svelte";
-
-  onMount(async () => {
-    await fetchaccs();
-  });
-
-  const fetchaccs = async () => {
-    const result = await accountService.findAll();
-    if (result instanceof Error) alert(result.message);
-    else if (result.length) window.location.replace(base + '/dash')
-  }
+  import Accounts from "$lib/pages/accounts/Accounts.svelte";
+  import DashBoard from "$lib/pages/dash/DashBoard.svelte";
+  import Debug from "$lib/pages/debug/Debug.svelte";
+  import Home from "$lib/pages/home/Home.svelte";
+  import NewAccount from "$lib/pages/new-account/NewAccount.svelte";
+  import Test from "$lib/pages/test/Test.svelte";
+  import { app } from "$lib/stores/app";
 </script>
 
-<div class="page">
-<h1>Welcome to Lib Wallet</h1>
-
-<a href="{base}/test">test the static adapter</a><br>
-
-you're already logged in? => dashboard <br>
-else => pls sign in
-</div>
+{#if $app.page === "home"}
+  <Home />
+{:else if $app.page === "dash"}
+  <DashBoard />
+{:else if $app.page === "test"}
+  <Test />
+{:else if $app.page === "debug"}
+  <Debug />
+{:else if $app.page === "accounts"}
+  <Accounts />
+{:else if $app.page === "new-account"}
+  <NewAccount />
+{/if}
