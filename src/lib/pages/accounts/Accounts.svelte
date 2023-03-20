@@ -39,7 +39,12 @@
 {/if}
 
 {#if !accounts.length}
-  <a href="{base}/accounts/new">create new bank account!! </a>
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
+  <div on:click={() => app.navto('new-account')} class="link">
+    <u>
+      create new bank account!!
+    </u>
+  </div>
 {/if}
 
 {#each accounts as account}
@@ -48,3 +53,10 @@
 <br>
 
 </div>
+
+<style>
+  .link {
+    cursor: pointer;
+    color: var(--link-visited);
+  }
+</style>
