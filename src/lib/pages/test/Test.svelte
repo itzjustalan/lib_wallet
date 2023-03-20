@@ -1,6 +1,5 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { base } from "$app/paths";
   import { browser } from "$app/environment";
   import { accountService } from "$lib/services/account.service";
   import type { Account } from "$lib/models/account";
@@ -49,5 +48,4 @@
 <input bind:value={accountName} placeholder="Account Name" />
 <button on:click={createBankAcc}>Create new Bank Account</button>
 
-<a href="{base}/">Home</a>
 </div>
