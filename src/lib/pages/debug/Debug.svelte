@@ -5,7 +5,7 @@
     import { theme } from "$lib/stores/theme";
     import Item from "$lib/widgets/drawer/Item.svelte";
 
-    if (browser && !dev) app.navto("dash");
+    // if (browser && !dev) app.navto("dash");
     const deleteIDB = async () => {
         if (!browser) return;
         const { deleteDB } = await import("idb");

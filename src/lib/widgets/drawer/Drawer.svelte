@@ -26,6 +26,7 @@
         {#if dev}
             <Item text={"developer"} onclick={navto("debug")} />
         {/if}
+        <Item text={"developer"} onclick={navto("debug")} />
         <Item text={"theme: " + $theme} onclick={theme.toggle} />
         <!-- <Item text="" onclick={() => {}} /> -->
     </nav>
