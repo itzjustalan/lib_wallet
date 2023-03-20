@@ -1,0 +1,7 @@
+:root {
+	--fg-cl: rgb(0, 0, 0);
+	/* --bg-cl: rgb(220, 254, 220); */
+	--bg-cl: rgb(255, 255, 255);
+	--ln-cl: grey;
+	--link-visited: blueviolet;
+}

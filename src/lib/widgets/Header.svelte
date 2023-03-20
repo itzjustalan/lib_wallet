@@ -5,3 +5,10 @@
 <header>
     <button on:click={theme.toggle}>{$theme}</button>
 </header>
+
+<style>
+    header {
+        height: 10vh;
+        background-color: red;
+    }
+</style>

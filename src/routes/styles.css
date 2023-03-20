@@ -1,17 +1,53 @@
-/* resets */
-body {
-	margin: 0;
-	padding: 0;
-}
+@import "css/reset.css";
+@import "css/main.css";
+@import "css/dark.css";
 
 :root {
-	--th-cl: rgb(220, 254, 220);
+	--bk-sm: 500px;
+	--bk-md: 900px;
 }
 
 [data-theme="dark"] {
-	--th-cl: rgb(84, 78, 84);
+	--fg-cl: var(--dk-fg-cl);
+	--bg-cl: var(--dk-bg-cl);
+	--ln-cl: var(--dk-ln-cl);
+	--link-visited: var(--dk-link-visited);
 }
 
-.app {
-	background-color: var(--th-cl);
+a, a:visited {
+	color: var(--link-visited);
+}
+
+body {
+	color: var(--fg-cl);
+	background-color: var(--bg-cl);
+}
+
+.css-debug::after {
+	content: 'website';
+}
+
+/* tablet breakpoint */
+@media (max-width: 900px) {
+	.css-debug::after {
+		content: 'tablet';
+	}
+}
+
+/* mobile breakpoint */
+@media (max-width: 500px) {
+	.css-debug::after {
+		content: 'mobile';
+	}
+}
+
+.page {
+	padding: 1rem;
+}
+
+.page-title {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	padding-bottom: .5rem;
+	border-bottom: 1px solid var(--ln-cl);
 }
