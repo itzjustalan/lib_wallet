@@ -13,7 +13,8 @@ jobs:
         with:
           node-version: 18
       - run: |
-          git checkout origin/gh-pages
+          git fetch
+          git checkout --track origin/gh-pages
           git merge main
           npm install .
           npm run build
