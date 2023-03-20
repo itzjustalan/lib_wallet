@@ -1,12 +1,17 @@
 <script lang="ts">
     import { dev } from "$app/environment";
-    import { base } from "$app/paths";
     import { app } from "$lib/stores/app";
     import type { pagenames } from "$lib/stores/app";
     import { theme } from "$lib/stores/theme";
     import Item from "./Item.svelte";
+    import { createEventDispatcher } from 'svelte';
 
-    const navto = (page: pagenames) => () => app.navto(page);
+	const dispatch = createEventDispatcher();
+
+    const navto = (page: pagenames) => () => {
+        dispatch('nav', { page });
+        app.navto(page);
+    }
 </script>
 
 <aside>
@@ -28,9 +33,9 @@
 
 <style>
     .drawer {
-        width: 20vw;
         height: 100vh;
         border-right: 1px solid var(--ln-cl);
+        background-color: var(--bg-cl);
     }
     .heading {
         padding: 1vw;
