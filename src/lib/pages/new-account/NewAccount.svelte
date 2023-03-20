@@ -1,12 +1,13 @@
 <script lang="ts">
     import { base } from "$app/paths";
     import { accountService } from "$lib/services/account.service";
+    import { app } from "$lib/stores/app";
 
   let accountName: string;
   const createBankAcc = async () => {
     if (!accountName) alert("enter an account name");
     await accountService.createNew(accountName);
-    window.location.replace(base + '/dash')
+    app.navto('dash');
   };
 </script>
 

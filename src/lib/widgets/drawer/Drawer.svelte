@@ -13,15 +13,15 @@
     <nav class="drawer">
         <div class="heading">Drawer {$app.account?.name}</div>
         <!-- <h1 class="heading">Drawer</h1> -->
-        <Item text={"theme: " + $theme} onclick={theme.toggle} />
+        <Item text="Dashboard" onclick={navto("dash")} />
         <Item text="Home" onclick={navto("home")} />
         <Item text="Test" onclick={navto("test")} />
-        <Item text="Dashboard" onclick={navto("dash")} />
         <Item text={"Accounts"} onclick={navto("accounts")} />
         <Item text={"New Account"} onclick={navto("new-account")} />
         {#if dev}
             <Item text={"developer"} onclick={navto("debug")} />
         {/if}
+        <Item text={"theme: " + $theme} onclick={theme.toggle} />
         <!-- <Item text="" onclick={() => {}} /> -->
     </nav>
 </aside>

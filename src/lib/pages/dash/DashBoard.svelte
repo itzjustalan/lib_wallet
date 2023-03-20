@@ -18,6 +18,6 @@
   <div class="page-title">Dashboard</div>
   <Item
     text={"Account: " + $app.account?.name}
-    onclick={() => window.location.replace(base + "/accounts")}
+    onclick={() => app.navto('accounts')}
   />
 </div>

@@ -16,9 +16,11 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter({
 			pages: 'docs',
+			precompress: true,
 		}),
 		paths: {
-			base: dev ? '' : '/lib_wallet',
+			// base: dev ? '' : '/lib_wallet',
+			base: '',
 		},
 	}
 };
