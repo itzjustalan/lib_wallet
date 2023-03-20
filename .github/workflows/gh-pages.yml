@@ -13,9 +13,9 @@ jobs:
         with:
           node-version: 18
       - run: |
-          git fetch --allow-unrelated-histories
+          git fetch
           git checkout --track origin/gh-pages
-          git merge main
+          git merge --allow-unrelated-histories main
           npm install .
           npm run build
           git config user.name github-actions
