@@ -1,9 +1,14 @@
 <script lang="ts">
+    import { browser } from "$app/environment";
   import { base } from "$app/paths";
   import { accountService } from "$lib/services/account.service";
   import { app } from "$lib/stores/app";
   import Item from "$lib/widgets/drawer/Item.svelte";
   import { onMount } from "svelte";
+
+  if (browser && !("indexedDB" in window)) {
+    alert("This browser doesn't support IndexedDB");
+  }
 
   onMount(async () => {
     if (!$app.account) {

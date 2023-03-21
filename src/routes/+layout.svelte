@@ -2,10 +2,12 @@
     import Header from "$lib/widgets/Header.svelte";
     import Drawer from "$lib/widgets/drawer/Drawer.svelte";
     import "./styles.css";
+    import { app } from "$lib/stores/app";
     
 </script>
 
-<!-- <div class="css-debug"></div> -->
+<!-- <div class="css-debug" /> -->
+{$app.page}
 <div class="app">
     <div class="header"><Header /></div>
     <div class="container">

@@ -1,6 +1,6 @@
 <script lang="ts">
     import Drawer from "$lib/widgets/drawer/Drawer.svelte";
-    let showDrawer = !false;
+    let showDrawer = false;
     const toggleDrawer = () => showDrawer = !showDrawer;
 </script>
 

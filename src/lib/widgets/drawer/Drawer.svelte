@@ -22,10 +22,12 @@
         <Item text="Home" onclick={navto("home")} />
         <Item text="Test" onclick={navto("test")} />
         <Item text={"Accounts"} onclick={navto("accounts")} />
-        <Item text={"New Account"} onclick={navto("new-account")} />
-        {#if dev}
+        <!-- <Item text={"New Account"} onclick={navto("new-account")} /> -->
+        <Item text={"Transactions"} onclick={navto("transactions")} />
+        <Item text={"New Transaction"} onclick={navto("new-transaction")} />
+        <!-- {#if dev}
             <Item text={"developer"} onclick={navto("debug")} />
-        {/if}
+        {/if} -->
         <Item text={"developer"} onclick={navto("debug")} />
         <Item text={"theme: " + $theme} onclick={theme.toggle} />
         <!-- <Item text="" onclick={() => {}} /> -->
