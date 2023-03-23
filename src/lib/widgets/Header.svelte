@@ -1,17 +1,18 @@
 <script lang="ts">
+    import { Icons } from "$lib/icons";
     import Drawer from "$lib/widgets/drawer/Drawer.svelte";
     let showDrawer = false;
-    const toggleDrawer = () => showDrawer = !showDrawer;
+    const toggleDrawer = () => (showDrawer = !showDrawer);
 </script>
 
 <header>
-    <button on:click={toggleDrawer}>
-        {#if showDrawer}
-            Close
-        {:else}
-            Drawer
-        {/if}
-    </button>
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <iconify-icon
+        on:click={toggleDrawer}
+        icon={showDrawer
+            ? Icons.material_symbols_close_rounded
+            : Icons.material_symbols_view_sidebar_rounded}
+    />
 </header>
 {#if showDrawer}
     <div class="drawer"><Drawer on:nav={toggleDrawer} /></div>
