@@ -11,4 +11,8 @@ export interface IDB extends DBSchema {
         key: string,
         value: Transaction,
     },
+    categories: {
+        key: string,
+        value: Transaction,
+    },
 }

@@ -18,6 +18,10 @@ class IndexedDB {
                     keyPath: "id",
                     autoIncrement: true,
                 });
+                db.createObjectStore("categories", {
+                    keyPath: "id",
+                    autoIncrement: true,
+                });
             },
             blocked(currentVersion, blockedVersion, event) {
             },
