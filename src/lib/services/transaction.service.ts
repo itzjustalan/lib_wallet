@@ -8,12 +8,14 @@ class TransactionService {
         amount: number,
         description: string,
         accountID: string,
+        categoryID?: string,
     ): Promise<string | Error> => {
         try {
             return await (await indexedDB)?.add("transactions", {
+                amount,
                 description,
                 accountID,
-                amount,
+                categoryID,
                 createdAt: new Date(),
             }) ?? this.nodb;
         } catch (e) {
