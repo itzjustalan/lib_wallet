@@ -9,7 +9,11 @@
   let accounts: Account[] = [];
   const createBankAcc = async () => {
     if (!accountName) alert("enter an account name");
-    await accountService.createNew(accountName);
+    await accountService.createNew({ name: accountName });
+    // await accountService.createNew(accountName);
+    // let gg = await testService.findAll();
+    // if (gg instanceof Error) return;
+    // else if (gg.length) gg[0].name;
     await fetchaccs();
   };
 
