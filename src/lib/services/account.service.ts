@@ -1,26 +1,14 @@
-import { log } from "$lib/logger"
+import { log } from "$lib/logger";
 import type { Account } from "$lib/models/account";
-import { indexedDB } from "./idb.service"
+import { indexedDB, IndexedDBService } from "./idb.service";
 
-class AccountService {
-    nodb = new Error('could not connect to indexed db');
-    createNew = async (name: string): Promise<string | Error> => {
-        try {
-            return await (await indexedDB)?.add('accounts', { name }) ?? this.nodb;
-        } catch (e) {
-            log.error(e);
-            return new Error('could not create new account');
-        }
-    }
-
-    findAll = async (): Promise<Error | Account[]> => {
-        try {
-            return await (await indexedDB)?.getAll('accounts') ?? this.nodb;
-        } catch (e) {
-            log.error(e);
-            return new Error('could not get all accounts');
-        }
-    }
+class AccountService extends IndexedDBService {
+    createNew = async (data: Account): Promise<Error | string> =>
+        super._createNew("accounts", data);
+    findOne = async (id: string): Promise<Error | Account> => super._findOne('accounts', id);
+    updateOne = async (id: string, data: Account): Promise<Error | string> => super._updateOne('accounts', id, data);
+    deleteOne = async (id: string): Promise<Error | void> => super._deleteOne('accounts', id);
+    findAll = async (): Promise<Error | Account[]> => super._findAll("accounts");
 }
 
-export const accountService = new AccountService()
+export const accountService = new AccountService();
